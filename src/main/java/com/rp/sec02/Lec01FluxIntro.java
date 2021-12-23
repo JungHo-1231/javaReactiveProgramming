@@ -7,23 +7,32 @@ import reactor.core.publisher.Flux;
 public class Lec01FluxIntro {
     public static void main(String[] args) {
 
-//        Flux<Integer> flux = Flux.just(1,2,3,4);
+        // 1
+        // Flux<Integer> flux = Flux.just(1, 2, 3, 4);
 
-        Flux<Object> flux = Flux.just(
-                1,
-                2,
-                3,
-                4,
-                "a",
-                Util.faker().name().firstName()
-        );
+        // 2
+        // Flux<Object> flux = Flux.empty();
 
+        // 3
+        //Flux<Object> flux = Flux.just(1, 2, 3, 4, "a", Util.faker().name().fullName());
+
+/*      // 4
         flux.subscribe(
-                Util.onNext()
-                , Util.onError()
-                , Util.onComplete()
+                util.onnext(),
+                util.onerror(),
+                util.oncomplete()
         );
+*/
 
+        Flux<Integer> integerFlux = Flux.just(1, 2, 3, 4);
+
+        Flux<Integer> evenFlux = integerFlux.filter(i -> i % 2 == 0);
+
+        integerFlux
+                .subscribe(i -> System.out.println("Sub 1 : " + i));
+
+        evenFlux
+                .subscribe(i -> System.out.println("Sub 2 : " + i));
     }
 }
 

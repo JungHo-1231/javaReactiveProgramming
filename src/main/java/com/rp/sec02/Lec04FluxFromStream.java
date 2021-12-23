@@ -17,16 +17,17 @@ public class Lec04FluxFromStream {
 //        stream.forEach(System.out::println);
 
 //        Flux<Integer> integerFlux = Flux.fromStream(stream);
-//        Flux<Integer> integerFlux = Flux.fromStream(()-> stream);
-        Flux<Integer> integerFlux = Flux.fromStream(()-> list.stream());
-        
+//        Flux<Integer> integerFlux = Flux.fromStream(() -> stream);
+
+        Flux<Integer> integerFlux = Flux.fromStream(() -> list.stream());
+
+
         integerFlux
                 .subscribe(
                         Util.onNext(),
                         Util.onError(),
                         Util.onComplete()
                 );
-
         integerFlux
                 .subscribe(
                         Util.onNext(),

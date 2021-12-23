@@ -19,7 +19,5 @@ public class Lec03FluxFromArrayOrList {
 
         Flux.fromArray(arr)
                 .subscribe(Util.onNext());
-
-
     }
 }
