@@ -6,13 +6,14 @@ import reactor.core.scheduler.Schedulers;
 
 import javax.swing.*;
 
-public class Lec06SupplierRefactoring {
+public class Lec06SupplierRefactoring2 {
     public static void main(String[] args) {
 
         getName();
-        getName()
+        String name = getName()
                 .subscribeOn(Schedulers.boundedElastic())
-                .subscribe(Util.onNext());
+                .block();
+        System.out.println("name = " + name);
         getName();
 
         Util.sleepSeconds(4);

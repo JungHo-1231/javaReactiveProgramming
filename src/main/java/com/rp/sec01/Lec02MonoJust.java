@@ -10,6 +10,7 @@ public class Lec02MonoJust {
 
         System.out.println(mono);
 
+        // subscribe
         mono.subscribe(integer -> System.out.println("Received : " + integer));
 
     }

@@ -12,15 +12,17 @@ public class Lec04MonoEmptyOrError {
         );
     }
 
+    // 퍼블리셔 역활을 한다.
     private static Mono<String> userRepository(int userId) {
 
         // 1
         if (userId == 1) {
             return Mono.just(Util.faker().name().firstName());
         } else if (userId == 2) {
-            return Mono.empty(); // null
-        } else {
-            return Mono.error(new RuntimeException("Not in the allowed rage"));
-        }
+            //return null;
+            return Mono.empty();
+        } else
+            return Mono.error(new RuntimeException("Not in the allowed range"));
+
     }
 }

@@ -13,7 +13,7 @@ public class Lec09AssignmentDemo {
 //        FileService.write("file03.txt", "This is file3")
 //                .subscribe(Util.onNext(), Util.onError(), Util.onComplete());
 
-        FileService.delete("file03.txt")
-                .subscribe(Util.onNext(), Util.onError(), Util.onComplete());
+//        FileService.delete("file03.txt")
+//                .subscribe(Util.onNext(), Util.onError(), Util.onComplete());
     }
 }

@@ -13,18 +13,19 @@ public class Lec05MonoFromSupplier {
         // Mono<String> mono = Mono.just(getName());
 
         Supplier<String> stringSupplier = () -> getName();
-        Mono<String> mono = Mono.fromSupplier(stringSupplier);
 
+        Mono<String> mono = Mono.fromSupplier(stringSupplier);
         mono.subscribe(
                 Util.onNext()
         );
 
+
         Callable<String> stringCallable = () -> getName();
 
-        Mono.fromCallable(stringCallable)
-                .subscribe(
-                        Util.onNext(
-                        ));
+        Mono.fromCallable(stringCallable).subscribe(
+                Util.onNext()
+        );
+
     }
 
     private static String getName() {
